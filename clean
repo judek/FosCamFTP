@@ -1,0 +1,11 @@
+#!/bin/bash
+# My first script
+
+echo "Cleaning old videos"
+
+rm -rf /btsync/cameras/bootzie/IPCamera/FI9821W_C4D65539EA3E/record/*
+rm -rf /btsync/cameras/driveway/IPCamera/FI9821W_00626E52CCD9/record/*
+rm -rf /btsync/cameras/192.168.1.101/IPCamera/FI9821W\ V2_00626E511BF9/record/*
+rm -rf /btsync/cameras/garage/IPCamera/FI9821W_C4D65539EE5E/record/*
+rm -rf /btsync/cameras/camera5/IPCamera/FI9821W_00626E52D159/record/*
+

@@ -1,0 +1,29 @@
+#!/bin/bash
+# A Script To Delete old camera directories
+# Jude Kannankeril - Jan/29/2015
+
+
+#Usage cleaner <BackDaysToStarFrom> <HowManyMoreDays> <FOLDER>
+
+if [ "$#" -ne 3 ]; then
+    echo "Illegal number of parameters"
+    echo "usage: cleaner <BackDaysToStarFrom> <HowManyMoreDays> <FOLDER>"
+    exit
+fi
+
+cd $3
+pwd
+
+
+for (( offSet=$1; offSet<=($1+$2); offSet++ ))
+do
+	X=$(date --date="-$offSet days" +%Y%m%d)
+
+	if [ -d "$X" ]; then
+	  echo "Directory $X exists, will remove"
+	  rm -rf $X
+	else
+	  echo "Directory $X doesn't exist."
+	fi
+done
+
