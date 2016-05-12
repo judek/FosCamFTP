@@ -1,0 +1,11 @@
+#!/bin/bash
+# My first script
+
+echo "Hello backyard"
+
+cd /btsync/cameras/backyard/
+pwd
+lftp -p 50021 -u camadmin,1friskey -e "set ftp:passive-mode false; set net:max-retries 3; mirror --Remove-source-files  ; bye" 192.168.1.105
+cd  /btsync/cameras/backyard/IPCamera/FI9821P_00626E60CE53/record 
+/home/hulu/./cleaner 14 100 .
+
