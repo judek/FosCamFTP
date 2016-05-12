@@ -1,0 +1,13 @@
+#!/bin/bash
+# My first script
+
+echo "Hello bootzie!"
+
+cd /btsync/cameras/bootzie/
+pwd
+lftp -p 50021 -u camadmin,1friskey -e "set ftp:passive-mode false; set net:max-retries 3; mirror --Remove-source-files ; bye" 192.168.1.103
+cd /btsync/cameras/bootzie/IPCamera/FI9821W_C4D65539EA3E/record
+pwd
+/home/hulu/./cleaner 14 100 .
+
+

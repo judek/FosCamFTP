@@ -1,0 +1,11 @@
+#!/bin/bash
+# My first script
+
+echo "Hello garage"
+
+cd /btsync/cameras/camera5/
+pwd
+lftp -p 50021 -u camadmin,1friskey -e "set ftp:passive-mode false; set net:max-retries 3; mirror --Remove-source-files  ; bye" 192.168.1.105
+cd  /btsync/cameras/camera5/IPCamera/FI9821W_00626E52D159/record 
+/home/hulu/./cleaner 14 100 .
+
